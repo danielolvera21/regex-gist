@@ -17,8 +17,6 @@ This expression certifies that a user inputs a valid email address.
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
 ## Regex Components
@@ -38,6 +36,9 @@ Characters that exist between []. Any meta character inside brackets becomes a l
 
 ### Flags
 
+Flags are optional parameters, in the form of an alphabet character, that can be added to alter the way the expression searches for a string. For example, "i" refers to ignore casing, which carries out a case insensitive search.
+There are no flags in this regular expression.
+
 ### Grouping and Capturing
 
 Parenthesis () are used to capture parts of an expression and separate them into groups.
@@ -49,15 +50,19 @@ Group 3: ([a-z\.]{2,6})
 
 ### Bracket Expressions
 
+[a-z0-9_\.-] '0-9' means '0123456789'
+[\da-z\.-] \d matches any decimal digit
+[a-z\.] a-z refers to the entire alphabet, or more specifically all letters from a to z.
+
 ### Greedy and Lazy Match
 
 the quantifiers \* + {} are greedy operators, expand the match as much as possible.
 
-### Boundaries
-
-### Back-references
-
 ### Look-ahead and Look-behind
+
+Lookahead syntax is X(?=Y), meaning look for X, but only if followed by Y. For example, \w+(?=!) means look for a word but only if it is followed by an "!".
+
+Lookbehind is similar, except it looks at what is BEFORE what you're trying to match. (?<=Y)X matches X but only if there's Y before it.
 
 ## Author
 
